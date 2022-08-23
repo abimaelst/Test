@@ -1,0 +1,19 @@
+{
+  "name": "technical-evaluation",
+  "version": "1.0.0",
+  "description": "Techincal Skills Evaluation",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "author": "Abimael Tavares",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15",
+    "tsc": "^2.0.4",
+    "typescript": "^4.7.4"
+  }
+}
