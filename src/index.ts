@@ -1,4 +1,10 @@
-import {isOddOrEven, isProperlyNested, quantityZeroInIntegerToBinary} from "./challenges";
+import {
+    isOddOrEven,
+    isProperlyNested,
+    quantityZeroInIntegerToBinary,
+    productBitwise,
+    rotateElement
+} from "./challenges";
 
 console.log('the number 3 is Even?', isOddOrEven(3)) // false
 console.log('the number -1 is Even?', isOddOrEven(-1)) // false
@@ -14,3 +20,6 @@ console.log('consecutive zeros in binary value?', quantityZeroInIntegerToBinary(
 console.log('consecutive zeros in binary value?', quantityZeroInIntegerToBinary(328)) // 2
 console.log('consecutive zeros in binary value?', quantityZeroInIntegerToBinary(20)) // 1
 
+console.log('product for interval 5 and 7?', productBitwise(5, 7)) // 4
+
+console.log('rotated element?', rotateElement( [3, 8, 9, 7, 6], -1)) // 4

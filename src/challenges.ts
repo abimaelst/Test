@@ -37,7 +37,7 @@ export const quantityZeroInIntegerToBinary = (value: number) => {
     let current = 0
     for (let i = 0; i<binaryNumber.length; i++) {
         Number(binaryNumber[i]) === 1 ? current = 0 : current++
-        if (current > countZero) {
+        if (current > countZero && Number(binaryNumber[i+1]) === 1) {
             countZero = current
         }
     }
@@ -47,23 +47,26 @@ export const quantityZeroInIntegerToBinary = (value: number) => {
 
 
 // Question 4
-export const rangeNumber = (valueX: number, ValueY:number) => {
+export const productBitwise = (valueX: number, ValueY:number) => {
+    let result = valueX
+    for(let i = valueX; i < ValueY; i++) {
+        result = Number(result) & (Number(i+1))
+    }
 
+    return result
 
 }
 
 
 // Question 5
-export const rotatedElement = (numbers: number[], valueN:number) => {
-    const result = [...numbers]
-   for (let i = 0; numbers.length; i++) {
-       if(valueN < 0) {
-          result[i] = result[i+1]
-           return
-       }
+export const rotateElement = (numbers: number[], valueN:number) => {
+    const result = valueN ? [...numbers] : [...numbers].reverse()
 
-       result[i+1] = result[i]
-   }
+   for (let i = 0; i < numbers.length - 1; i++) {
+              const tempNumber = result[i]
+              result[i] = result[i + 1]
+              result[i + 1] = tempNumber
+      }
 
    return result
 
